@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: django-react-typescript
+  IMAGE_NAME: django
 
 jobs:
   # Run tests.
