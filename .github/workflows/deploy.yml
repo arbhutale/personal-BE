@@ -53,6 +53,7 @@ jobs:
     needs: build-django
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    permissions: write-all
     steps:
       - uses: actions/checkout@v2
       - name: Build image
