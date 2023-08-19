@@ -3,7 +3,7 @@ version: "3"
 services:
   web:
     restart: always
-    image: docker.pkg.github.com/arbhutale/personal-be/django:latest
+    image: docker.pkg.github.com/arbhutale/personal-be/django:main
     expose:
       - "8000"
     ports:
