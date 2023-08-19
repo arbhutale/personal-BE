@@ -37,8 +37,12 @@ CORS_ORIGIN_WHITELIST = [
     'https://www.example.com',
     'http://146.190.113.62',
     'http://www.146.190.113.62',
-    'http://0.0.0.0:8000',
-    'http://localhost:8000',
+    'http://0.0.0.0:8084',
+    'http://localhost:8084',
+    'http://0.0.0.0:3001',
+    'http://localhost:3001',
+    'http://143.110.231.181'
+    'http://www.143.110.231.181'
 ]
 
 # DRF

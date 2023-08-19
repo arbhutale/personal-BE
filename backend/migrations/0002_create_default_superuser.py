@@ -7,16 +7,16 @@ class Migration(migrations.Migration):
     ]
 
     def generate_superuser(apps, schema_editor):
-        from django.contrib.auth.models import User
+        from api.users.models import CustomUser
 
         SU_NAME = 'admin'
         
         try: 
-            User.objects.get(username=SU_NAME)
-        except User.DoesNotExist:
+            CustomUser.objects.get(username=SU_NAME)
+        except CustomUser.DoesNotExist:
             SU_EMAIL = 'admin@example.com'
             SU_PASSWORD = 'admin'
-            superuser = User.objects.create_superuser(
+            superuser = CustomUser.objects.create_superuser(
                 username=SU_NAME,
                 email=SU_EMAIL,
                 password=SU_PASSWORD)

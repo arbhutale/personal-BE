@@ -17,7 +17,7 @@ PRODUCTION_MODE = (os.getenv('MODE') == 'production')
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['http://146.190.113.62/', 'http://146.190.113.62']
 CSRF_COOKIE_SECURE = False
-
+AUTH_USER_MODEL = "users.CustomUser"
 # Django Rest Framework
 # https://www.django-rest-framework.org/
 
@@ -220,6 +220,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
     'SECURITY_DEFINITIONS': {
         'Bearer': {
             'type': 'apiKey',

@@ -9,25 +9,25 @@ from api.utils import Pagination
 from rest_framework.permissions import IsAuthenticated 
 
 class PaginatedPublicationsEndpoint(generics.ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Publication.objects.all()
     serializer_class = PublicationsSerializer
     pagination_class = Pagination
 
 class PublicationsEndpoint(generics.ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Publication.objects.all()
     serializer_class = PublicationsSerializer
 
 class PublicationsQueryEndpoint(generics.ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Publication.objects.all()
     serializer_class = PublicationsSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = PublicationFilter
 
 class PaginatedPublicationsQueryEndpoint(generics.ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Publication.objects.all()
     serializer_class = PublicationsSerializer
     filter_backends = [DjangoFilterBackend]
@@ -35,7 +35,7 @@ class PaginatedPublicationsQueryEndpoint(generics.ListAPIView):
     pagination_class = Pagination
 
 class PublicationEndpoint(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
 
     def get(self, request, format=None, **kwargs):

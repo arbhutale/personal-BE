@@ -11,5 +11,5 @@ urlpatterns = [
     re_path(r'^publications/p/filter/$', PaginatedPublicationsQueryEndpoint.as_view()),
     re_path(r'^publications/(?P<slug>[\w\-]+)/$', PublicationEndpoint.as_view()),
     re_path(r'^publications/$', PublicationsEndpoint.as_view() ),
-    re_path(r'^authenticate/$', obtain_auth_token)
+    # re_path(r'^authenticate/$', obtain_auth_token)
 ]

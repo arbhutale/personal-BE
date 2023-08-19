@@ -9,7 +9,7 @@ class SubscribersEndpoint(APIView):
     """
     Interface for users to send their subscription data.
     """
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def post(self,request):
         serializer = SubscribersSerializer(data=request.data)
