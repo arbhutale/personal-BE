@@ -45,6 +45,13 @@ CORS_ORIGIN_WHITELIST = [
     'http://www.143.110.231.181'
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://143.110.231.181'
+    'http://www.143.110.231.181'
+    'http://143.110.231.181/'
+    'http://www.143.110.231.181/'
+]
+
 # DRF
 
 REST_FRAMEWORK = {
