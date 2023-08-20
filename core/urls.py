@@ -22,7 +22,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from api.users.views import UserAPIView
+from api.users.views import UserAPIView, RegisterView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
@@ -55,6 +55,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/user/', UserAPIView.as_view(), name='user'), 
+    path('api/user/register/', RegisterView.as_view(), name='register_user'), 
     re_path(r'^api/', include('api.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {
         'document_root': MEDIA_ROOT,
