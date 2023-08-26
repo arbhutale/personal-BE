@@ -27,9 +27,9 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 
-admin.site.site_header = "Django-React-Typescript Admin"
-admin.site.site_title = "Django-React-Typescript Admin"
-admin.site.index_title = "Modules"
+admin.site.site_header = "AR-Bhutale"
+admin.site.site_title = "AR-Bhutale Admin"
+admin.site.index_title = "ARB"
 
 
 def trigger_error(request):

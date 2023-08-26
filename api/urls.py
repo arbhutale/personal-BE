@@ -1,15 +1,14 @@
 from django.urls import re_path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
-from .views.subscribers import SubscribersEndpoint
-from .views.publications import PublicationsEndpoint, PublicationsQueryEndpoint, PaginatedPublicationsQueryEndpoint, PaginatedPublicationsEndpoint, PublicationEndpoint
-
+from api.bank_account.views import BankAccountViewSet
+from api.credit_card.views import CreditCardViewSet
+router = DefaultRouter()
+router.register(r'bank-accounts', BankAccountViewSet)
+router.register(r'credit-cards', CreditCardViewSet)
 
 urlpatterns = [
-    re_path(r'^subscribers/$', SubscribersEndpoint.as_view() ),
-    re_path(r'^publications/p/$', PaginatedPublicationsEndpoint.as_view() ),
-    re_path(r'^publications/filter/$', PublicationsQueryEndpoint.as_view() ),
-    re_path(r'^publications/p/filter/$', PaginatedPublicationsQueryEndpoint.as_view()),
-    re_path(r'^publications/(?P<slug>[\w\-]+)/$', PublicationEndpoint.as_view()),
-    re_path(r'^publications/$', PublicationsEndpoint.as_view() ),
-    # re_path(r'^authenticate/$', obtain_auth_token)
+    re_path(r'^authenticate/$', obtain_auth_token),
+    path('', include(router.urls)),
 ]
