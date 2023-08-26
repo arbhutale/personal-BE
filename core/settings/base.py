@@ -79,7 +79,6 @@ INSTALLED_APPS = [
     'django_filters',
     'api.bank_account',
     'api.credit_card',
-    'backend',
     'api',
     'api.users',
     'cloudinary'
