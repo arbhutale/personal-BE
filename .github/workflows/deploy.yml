@@ -97,7 +97,7 @@ jobs:
           host: ${{ secrets.HOST }}
           port: 2077
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "docker-compose.yml"
           target: "image"
 
@@ -117,7 +117,7 @@ jobs:
           host: ${{ secrets.HOST }}
           port: 2077
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker login -u arbhutale -p ${{ secrets.DEPLOY_TOKEN }} docker.pkg.github.com
             cd image
