@@ -3,7 +3,7 @@ on:
   push:
     # Publish `hml` as Docker `latest` image.
     branches:
-      - hml
+      - main
 
     # Publish `v1.2.3` tags as releases.
     tags:
@@ -121,8 +121,8 @@ jobs:
         with:
           host: ${{ secrets.HML_HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 2077
           source: "docker-compose.hml.yml"
           target: "image"
 
@@ -141,8 +141,8 @@ jobs:
         with:
           host: ${{ secrets.HML_HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 2077
           script: |
             docker login -u arbhutale -p ${{ secrets.DEPLOY_TOKEN }} docker.pkg.github.com
             cd image
