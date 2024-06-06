@@ -117,7 +117,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: 2077
           script: |
             docker login -u arbhutale -p ${{ secrets.DEPLOY_TOKEN }} docker.pkg.github.com
             cd image
