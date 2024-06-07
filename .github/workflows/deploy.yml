@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - uses: actions/checkout@main
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       - name: copy docker-compose.yml
         uses: appleboy/scp-action@v0.1.3
         with:
@@ -102,7 +102,7 @@ jobs:
           target: "image"
 
       - name: execute docker-compose
-        uses: appleboy/scp-action@v0.1.3
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           CDN_NAME: ${{ secrets.CDN_NAME }}
