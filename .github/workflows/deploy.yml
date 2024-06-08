@@ -121,5 +121,5 @@ jobs:
             echo "${{ secrets.DEPLOY_TOKEN }}" | docker login -u arbhutale --password-stdin docker.pkg.github.com
             cd image
             docker-compose pull
-            MODE=production SMTP_HOST_USER=${{ secrets.SMTP_HOST_USER }} SMTP_HOST_PASSWORD=${{ secrets.SMTP_HOST_PASSWORD }} SECRET_KEY=${{ secrets.SECRET_KEY }} CDN_NAME=${{ secrets.CDN_NAME }} CDN_API_KEY=${{ secrets.CDN_API_KEY }} CDN_API_SECRET=${{ secrets.CDN_API_SECRET }} DB_HOST=${{ secrets.DB_HOST }} DB_NAME=${{ secrets.DB_NAME }} DB_USER=${{ secrets.DB_USER }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} DB_PORT=${{ secrets.DB_PORT }} docker-compose up -d
+            MODE=production SMTP_HOST_USER=${{ SMTP_HOST_USER }} SMTP_HOST_PASSWORD=${{ secrets.SMTP_HOST_PASSWORD }} SECRET_KEY=${{ secrets.SECRET_KEY }} CDN_NAME=${{ secrets.CDN_NAME }} CDN_API_KEY=${{ secrets.CDN_API_KEY }} CDN_API_SECRET=${{ secrets.CDN_API_SECRET }} DB_HOST=${{ secrets.DB_HOST }} DB_NAME=${{ DB_NAME }} DB_USER=${{ DB_USER }} DB_PASSWORD=${{ DB_PASSWORD }} DB_PORT=${{ DB_PORT }} docker-compose up -d
             docker image prune -f
